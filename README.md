@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# 🚀 SpaceX Mission Control
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A space-themed frontend application built with **React + Vite + TypeScript** that displays information about SpaceX launches using the public SpaceX API.  
+The app allows users to browse launches, select a mission, and view detailed information including an embedded launch video when available.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- Fetches real launch data from the SpaceX API
+- Displays a list of launches with basic information
+- Shows detailed mission data when a launch is selected
+- Embeds YouTube launch videos when available
+- Handles loading, empty, and error states
+- Space-inspired UI with glassmorphism and decorative background elements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Technical Decisions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Custom Hook (`useLaunches`)**  
+  Used to encapsulate data fetching logic and manage loading and error states, keeping components clean and focused on rendering.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **TypeScript**  
+  Strong typing is used to model API responses and application state, improving reliability and developer experience.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Component-Based Architecture**  
+  The UI is split into reusable components such as the launch list and the main detail panel.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **CSS for Visual Design**  
+  The interface uses CSS glassmorphism, layered backgrounds, and fixed decorative elements (Earth and Moon) to create a space-themed experience without impacting performance.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React
+- Vite
+- TypeScript
+- CSS
+- SpaceX REST API
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
+```bash
+npm install
