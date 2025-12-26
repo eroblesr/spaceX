@@ -3,7 +3,8 @@ import LaunchList from "./components/LauchList";
 import "./App.css";
 import { useState } from "react";
 import type { Launch } from "./types/launch";
-
+import earth from "./assets/earth.png";
+import moon from "./assets/moon.png";
 // Main application component
 // Responsible for deciding what to render based on app states
 function App() {
@@ -38,8 +39,8 @@ function App() {
   return (
     <div>
       {/* Decorative background elements */}
-      <img src="/earth.png" alt="Earth" className="earth" />
-      <img src="/moon.png" alt="Moon" className="moon" />
+      <img src={earth} alt="Earth" className="earth" />
+      <img src={moon} alt="Moon" className="moon" />
       {/* Loading and error states */}
       {loading && <p>Loading...</p>}
       {error && <p>Error loading launches</p>}
