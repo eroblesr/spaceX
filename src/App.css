@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #091530;
+  position: relative;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FACC15'%3E%3Cpolygon points='150,140 152,150 162,152 152,154 150,164 148,154 138,152 148,150'/%3E%3Cpolygon points='60,60 62,66 68,68 62,70 60,76 58,70 52,68 58,66'/%3E%3Cpolygon points='240,80 242,85 247,87 242,89 240,94 238,89 233,87 238,85'/%3E%3Cpolygon points='90,220 92,226 98,228 92,230 90,236 88,230 82,228 88,226'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+  background-size: 320px 320px;
+
+  opacity: 0.75;
+  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6));
+}
+
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  max-width: 1200px;
+  height: 90vh;
+  margin: 5vh auto;
+
+  background: rgba(207, 206, 221, 0.026);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  padding: 3rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(250, 204, 21, 0.15);
+}
+.sidebar-list{
+  margin-top: 1rem;
+  max-height: 70vh; 
+  overflow-y: auto;
+  
+}
+.panel {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.panel-content {
+  max-width: 800px;
+  width: 100%;
+}
+.earth {
+  position: fixed;
+  bottom: -120px;
+  left: -120px;
+  width: 400px;
+
+  z-index: 1;
+  pointer-events: none;
+
+  filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.45));
+}
+.moon {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  width: 90px;
+
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
