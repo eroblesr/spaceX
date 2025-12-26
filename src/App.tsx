@@ -38,9 +38,9 @@ function App() {
 
   return (
     <div>
-      {/* Decorative background elements */}
-      <img src={earth} alt="Earth" className="earth" />
-      <img src={moon} alt="Moon" className="moon" />
+        {/* Decorative background elements */}
+        <img src={earth} alt="Earth" className="earth" />
+        <img src={moon} alt="Moon" className="moon" />
       {/* Loading and error states */}
       {loading && <p>Loading...</p>}
       {error && <p>Error loading launches</p>}
